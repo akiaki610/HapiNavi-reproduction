@@ -200,5 +200,5 @@ body, html {
 
 @font-face {
   font-family: 'JNR';
-  src: url('西日本方向幕ロゴ.ttf') format('truetype');
+  src: url('font/jnr.ttf') format('truetype');
 }
