@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background: black;
+    font-family: 
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*上バー*/
+.top {
+  height: 80px;
+  background: #0a2a6a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  line-height: 1.2;
+}
+
+.catch {
+  font-size: 7px;
+  color: #ccc;
+}
+
+.main-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.Note {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.right-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.record {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-size: 20px;
+}
+
+/*トグル*/
+.toggle {
+  width: 80px;
+  height: 40px;
+  background: #888;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle::after {
+  content: "";
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.1s;
+}
+
+.toggle.active {
+    background: #00cc66;
+}
+
+.toggle.active::after {
+    left: 42px;
+}
+
+/*メイン*/
+.main {
+  flex: 1;
+  position: relative;
+  color: white;
+  padding: 40px;
+}
+
+/*左上*/
+.left-top {
+  position: absolute;
+  top: 30px;
+  left: 150px;
+}
+
+.type {
+  font-size: 100px;
+  letter-spacing: 10px;
+  font-family: 'JNR', sans-serif;
+}
+
+.sub {
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
+}
+
+/*右上*/
+.right-top {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 60px;
+}
+
+/*中央*/
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.big {
+  font-size: 400px;
+  font-weight: 400;
+}
+
+.unit {
+  font-size: 130px;
+  margin-left: 20px;
+}
+
+.next {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  font-size: 60px;
+}
+
+.detail {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #ccc;
+  margin-left: 235px;
+}
+
+/*下ボタン*/
+.bottom {
+  height: 60px;
+  display: flex;
+  gap: 7px;
+}
+
+.btn {
+  flex: 1;
+  background: #e6007e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  border-right: 2px solid #000;
+  border-radius: 15px;
+}
+
+.btn:last-child {
+  border-right: none;
+}
+
+@font-face {
+  font-family: 'JNR';
+  src: url('font/西日本方向幕ロゴ.ttf') format('truetype');
+}
