@@ -13,17 +13,45 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-
 const trainRef = ref(db, "train");
 
 onValue(trainRef, (snapshot) => {
   const data = snapshot.val();
   if (!data) return;
 
-  document.querySelector(".right-top").textContent = data.number;
-  document.querySelector(".big").textContent = data.cars;
+  // ===== 基本表示 =====
+  document.querySelector(".right-top").textContent = data.number || "----";
+  document.querySelector(".big").textContent = data.cars || "0";
   document.querySelector(".next-text").textContent =
-  "NEXT＞ " + data.next;
+    "NEXT＞ " + (data.next || "未設定");
+
+  // ===== 種別 =====
+  const typeEl = document.getElementById("type");
+  const typeEnEl = document.getElementById("type-en");
+
+  typeEl.textContent = data.type || "普通";
+  typeEnEl.textContent = data.type_en || "Local";
+
+  // ===== 色 =====
+  const color = data.color || "#cccccc";
+  typeEl.style.color = color;
+  typeEnEl.style.color = color;
+
+  // ===== フォント =====
+  if (data.font === "jr") {
+    typeEl.style.fontFamily = "JNR";                 // 日本語
+    typeEnEl.style.fontFamily = "Arial, sans-serif"; // 英語
+  } else {
+    typeEl.style.fontFamily = "sans-serif";
+    typeEnEl.style.fontFamily = "sans-serif";
+  }
+
+  // ===== 文字間隔（JR風） =====
+  if (data.font === "jr") {
+    typeEl.style.letterSpacing = "0.2em";
+  } else {
+    typeEl.style.letterSpacing = "normal";
+  }
 
   console.log("Firebaseデータ:", data);
 });

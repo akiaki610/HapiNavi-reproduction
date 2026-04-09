@@ -15,11 +15,20 @@ body, html {
     sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 .app {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /*上バー*/
@@ -127,6 +136,7 @@ body, html {
   font-size: 100px;
   letter-spacing: 10px;
   font-family: 'JNR', sans-serif;
+  color: #ccc;
 }
 
 .sub {
@@ -201,4 +211,40 @@ body, html {
 @font-face {
   font-family: 'JNR';
   src: url('font/jnr.ttf') format('truetype');
+}
+
+@media screen and (max-width: 768px) {
+
+  .type {
+    font-size: 2px;
+  }
+
+  .sub {
+    font-size: 5px;
+  }
+
+  .right-top {
+    font-size: 26px;
+  }
+
+  .big {
+    font-size: 11160px;
+  }
+
+  .unit {
+    font-size: 45px;
+  }
+
+  .next {
+    font-size: 20px;
+  }
+
+  .detail {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 12px;
+  }
+
 }
