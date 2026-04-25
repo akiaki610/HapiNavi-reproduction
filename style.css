@@ -208,6 +208,19 @@ html {
   border-right: none;
 }
 
+.stop-label {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  font-size: 40px;
+  color: yellow;
+  display: none;
+}
+
+.stopping .stop-label {
+  display: block;
+}
+
 @font-face {
   font-family: 'JNR';
   src: url('font/jnr.ttf') format('truetype');
@@ -215,36 +228,64 @@ html {
 
 @media screen and (max-width: 768px) {
 
+  /* 左上（種別） */
   .type {
-    font-size: 2px;
+    font-size: 50px;
+    letter-spacing: 5px;
   }
 
   .sub {
-    font-size: 5px;
+    font-size: 14px;
   }
 
+  /* 右上（列番） */
   .right-top {
-    font-size: 26px;
+    font-size: 30px;
   }
 
+  /* 中央（両数） */
   .big {
-    font-size: 11160px;
+    font-size: 150px;
+    line-height: 1;
   }
 
   .unit {
-    font-size: 45px;
+    font-size: 40px;
   }
 
+  /* NEXT */
   .next {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .detail {
     font-size: 12px;
+    margin-left: 0; /* ←重要（ズレ防止） */
   }
 
+  /* ボタン */
   .btn {
     font-size: 12px;
+    padding: 8px;
   }
+}
 
+.stopping .next-text {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.stopping {
+  animation: bgFlash 1s infinite;
+}
+
+@keyframes bgFlash {
+  0% { background: black; }
+  50% { background: #222; }
+  100% { background: black; }
 }
